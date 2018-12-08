@@ -7,9 +7,10 @@
 		if($user=="sai" || $user=="rohit")
 		{
 			//imagecreate(height,width)
+			//returns an image resource id
 			$im=imagecreate(1,1);
 
-			//imagecolorallocate(red,green,blue)
+			//imagecolorallocate(image resource id,red,green,blue)
 			imagecolorallocate($im, 255, 255, 255);
 		}
 
