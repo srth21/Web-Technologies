@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binary Load Data</title>
+
+	<script type="text/javascript">
+		bin={
+			xhr : new XMLHttpRequest(),
+
+			getVideo : function(){
+
+				this.xhr.onreadystatechange=this.show;
+				this.xhr.responseType= "blob";
+				this.xhr.open("GET","binPHP.php",true);
+				this.xhr.send();
+
+
+			},
+
+			show : function(){
+
+				if(bin.xhr.readyState==4 && bin.xhr.status==200)
+				{
+					video=bin.xhr.response;
+					vid = document.createElement("video");
+					vid.controls = true;
+
+					//To create a dummy URL on the browser side.
+					vid.src = URL.createObjectURL(video);
+
+					//Add the video to the body
+					document.body.appendChild(vid);
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Get Video" onclick="bin.getVideo()" />
+</body>
+</html>
