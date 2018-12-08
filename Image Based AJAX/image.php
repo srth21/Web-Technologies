@@ -2,6 +2,8 @@
 
 		header("Content-type:img/jpeg");
 		
+		//can set the php file to point to an image rather than returning an image
+		//header("Location : myiamge.jpeg");
 		extract($_GET);
 
 		if($user=="sai" || $user=="rohit")
