@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Frame</title>
+	<script type="text/javascript">
+
+		function disp(value)
+		{
+			document.getElementById("name").value=value;
+		};
+
+	</script>
+</head>
+<body>
+	<form method="post" id="form" target="hidden" action="hiddenPost.php">
+		<h3> Enter your srn </h3>
+		<input type="text" name="srn" id="srn">
+		<input type="text" name="class" id="class">
+		<input type="submit" value="click for name" >
+		<input type="text" name="name" id="name">
+		
+	</form>
+</body>
+</html>
