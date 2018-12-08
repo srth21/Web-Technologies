@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Frame</title>
+	<script type="text/javascript">
+		function classHidden()
+		{
+			var srn=document.getElementById("srn").value;
+			var cls=document.getElementById("class").value;
+			//document.write(srn);
+			top.frames["hidden"].location="hidden.php?srn="+srn+"&class="+cls;
+		};
+
+		function disp(value)
+		{
+			document.getElementById("name").value=value;
+		};
+
+	</script>
+</head>
+<body>
+	<form>
+		<h3> Enter your srn </h3>
+		<input type="text" name="srn" id="srn">
+		<input type="text" name="class" id="class">
+		<input type="button" value="click for name" onclick="classHidden()">
+		<input type="text" name="name" id="name">
+
+	</form>
+</body>
+</html>
