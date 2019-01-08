@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image HTML</title>
+
+	<script type="text/javascript">
+
+		//creating the image
+		//setting the src to the php file
+		function checkUserName()
+		{
+			var username=document.getElementById("name").value;
+
+			img=document.createElement("img");
+			console.log(username);
+			img.src="image.php?user="+username;
+
+			//defines success and failure event handlers
+			img.onload=success;
+			img.onerror=failure;
+		}
+
+		//success
+		function success()
+		{
+			var msg=document.getElementById("namePresence");
+
+			if(img.width==1)
+			{
+				msg.innerHTML="Valid UserName";
+			}
+			if(img.width==2)
+			{
+				msg.innerHTML="Invalid UserName";
+			}
+		}
+
+		//failure
+		function failure()
+		{
+			var msg=document.getElementById("namePresence");
+			msg.innerHTML="Error";
+		}
+
+	</script>
+</head>
+<body>
+	<h3> Enter your username </h3>
+	<input type="text" name="user" id="name" onblur="checkUserName()">
+
+	<div id="namePresence"> Checking for name </div>
+
+</body>
+</html>
